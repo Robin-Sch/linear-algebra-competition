@@ -41,7 +41,7 @@ All languages except Julia, Matlab and Python have significant longer running ti
 - Computing eigenvectors of a (random) 2000^2 matrix
 - Computing singular vectors of a (random) 2000^2 matrix
 
-| Language | Linear System (5000^2) [s] | EigenVector (1000^2) [s] | Singular vectors (1000^2) [s] |
+| Language | Linear System (7500^2) [s] | EigenVector (2000^2) [s] | Singular vectors (2000^2) [s] |
 | --- | --- | --- | --- |
 | Julia | 10.21 | 10.93 | 7.33 |
 | Matlab | 8.58 vs 7.82 | 5.76 | 3.434 |

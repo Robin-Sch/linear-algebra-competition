@@ -1,0 +1,19 @@
+name: Run C++ Script
+on: [push]
+jobs:
+  my-job:
+    name: Run C++ Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up C++
+        run: sudo apt update && sudo apt install gcc-10 g++-10 -y
+      - name: Install dependencies
+        run: git clone https://gitlab.com/libeigen/eigen.git
+      - name: Run task 1
+        run: g++ -I eigen cpp/one.cpp -O -o one && ./one
+      - name: Run task 2
+        run: g++ -I eigen cpp/two.cpp -O -o two && ./two
+      - name: Run task 3
+        run: g++ -I eigen cpp/three.cpp -O -o three && ./three

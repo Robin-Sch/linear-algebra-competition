@@ -1,0 +1,19 @@
+name: Run Julia Script
+on: [push]
+jobs:
+  my-job:
+    name: Run Julia Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v1
+      - name: Install dependencies
+        run: julia -e 'import Pkg; Pkg.add("BenchmarkTools")'
+      - name: Run task one
+        run: julia julia/one.jl
+      - name: Run task two
+        run: julia julia/two.jl
+      - name: Run task three
+        run: julia julia/three.jl

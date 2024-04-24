@@ -1,0 +1,19 @@
+name: Run Rust Script
+on: [push]
+jobs:
+  my-job:
+    name: Run Rust Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install dependencies and compile
+        run: cargo install --path ./rust/
+      - name: Run task 1
+        run: ./rust/target/release/one
+      - name: Run task 2
+        run: ./rust/target/release/two
+      - name: Run task 3
+        run: ./rust/target/release/three

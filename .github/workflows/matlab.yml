@@ -1,0 +1,23 @@
+name: Run MATLAB Script
+on: [push]
+jobs:
+  my-job:
+    name: Run MATLAB Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1
+      - name: Run task one
+        uses: matlab-actions/run-command@v1
+        with:
+          command: addpath("matlab"), one
+      - name: Run task two
+        uses: matlab-actions/run-command@v1
+        with:
+          command: addpath("matlab"), two
+      - name: Run task three
+        uses: matlab-actions/run-command@v1
+        with:
+          command: addpath("matlab"), three

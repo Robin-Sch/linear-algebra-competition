@@ -1,0 +1,20 @@
+[package]
+name = "linear_algebra_competition"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "one"
+path = "one.rs"
+
+[[bin]]
+name = "two"
+path = "two.rs"
+
+[[bin]]
+name = "three"
+path = "three.rs"
+
+[dependencies]
+nalgebra = "0.32.3"
+rand = "0.8.5"

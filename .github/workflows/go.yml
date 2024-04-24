@@ -1,0 +1,19 @@
+name: Run Go Script
+on: [push]
+jobs:
+  my-job:
+    name: Run Go Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+      - name: Install dependencies
+        run: go mod init linear_algebra_competition && go get gonum.org/v1/gonum/...@latest
+      - name: Run task one
+        run: go build ./go/one.go -o ./one && ./one
+      - name: Run task two
+        run: go build ./go/two.go -o ./two && ./two
+      - name: Run task three
+        run: go build ./go/three.go -o ./three && ./three

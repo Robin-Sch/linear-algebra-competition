@@ -1,0 +1,22 @@
+name: Run Python Script
+on: [push]
+jobs:
+  my-job:
+    name: Run Python Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install numpy
+      - name: Run task 1
+        run: python python/one.py
+      - name: Run task 2
+        run: python python/two.py
+      - name: Run task 3
+        run: python python/three.py

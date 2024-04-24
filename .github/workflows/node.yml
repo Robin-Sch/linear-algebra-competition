@@ -1,0 +1,19 @@
+name: Run Node Script
+on: [push]
+jobs:
+  my-job:
+    name: Run Node Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
+      - name: Install dependencies
+        run: npm install mathjs
+      - name: Run task 1
+        run: node --max-old-space-size=10000 node/one.js
+      - name: Run task 2
+        run: node --max-old-space-size=10000 node/two.js
+      - name: Run task 3
+        run: node --max-old-space-size=10000 node/three.js

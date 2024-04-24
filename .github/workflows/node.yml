@@ -12,8 +12,11 @@ jobs:
       - name: Install dependencies
         run: npm install mathjs
       - name: Run task 1
-        run: node --max-old-space-size=10000 node/one.js
+        run: "echo 'node is too slow'"
+        # run: node --max-old-space-size=10000 node/one.js
       - name: Run task 2
-        run: node --max-old-space-size=10000 node/two.js
+        run: "echo 'node is too slow'"
+        # run: node --max-old-space-size=10000 node/two.js
       - name: Run task 3
-        run: node --max-old-space-size=10000 node/three.js
+        run: "echo 'node is too slow'"
+        # run: node --max-old-space-size=10000 node/three.js

@@ -12,8 +12,8 @@ jobs:
       - name: Install dependencies
         run: go mod init linear_algebra_competition && go get gonum.org/v1/gonum/...@latest
       - name: Run task one
-        run: go build -o one one.go && ./one
+        run: go build -o one go/one.go && ./one
       - name: Run task two
-        run: go build -o two two.go && ./two
+        run: go build -o two go/two.go && ./two
       - name: Run task three
-        run: go build -o three three.go && ./three
+        run: go build -o three go/three.go && ./three
